@@ -28,4 +28,10 @@ interface ExperienceInterface {
     id: string,
 }
 
-export type {GeneralInfoInterface, EducationInterface, ExperienceInterface, ResponsibilityInterface};
+interface State {
+    generalInfo: GeneralInfoInterface;
+    education: EducationInterface[];
+    experience: ExperienceInterface[];
+}
+
+export type {GeneralInfoInterface, EducationInterface, ExperienceInterface, ResponsibilityInterface, State};

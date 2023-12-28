@@ -11,14 +11,14 @@ interface ExperienceEntryProps extends ExperienceInterface, ExperienceHandlers {
 
 function ExperienceEntry({company, position, start_date, end_date, location, responsibilities, id, onChange, onDelete, onAdd}: ExperienceEntryProps) {
     const responsibilitiesList = responsibilities.map((responsibility, i) =>
-        <div className={styles.responsibilityContainer} key={responsibility.id}>
+        <div className={`${styles.responsibilityContainer} responsibility-container`} key={responsibility.id}>
             <input type="text" name="responsibility" id={"responsibility" + i + id} value={responsibility.value} onChange={onChange} data-index={i} data-id={responsibility.id} />
             <svg onClick={onDelete} data-section="responsibilities" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>delete</title><path data-section="responsibilities" d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>
         </div>
     );
 
     return (
-        <div className={styles.experienceEntry}>
+        <div className={`${styles.experienceEntry} experience-entry`}>
             <label htmlFor={"company" + id}>Company:</label>
             <input type="text" name="company" id={"company" + id} value={company} onChange={onChange} />
             <label htmlFor={"position" + id}>Position:</label>
